@@ -91,6 +91,8 @@ div.header 								{ height:48px; z-index:50; position:relative; }
 	nav.right_top a, nav.right_bottom  a	{ margin:0px 0px 0px 24px; }
 	
 	nav.right_bottom 						{ position:absolute; top:38px; right:24px; margin-left:696px; }
+	nav.right_bottom form					{ display:inline;}
+	
 
 
 /* -------------------------------------------------------------------- GLOBAL TYOPGRAPHY & BUTTON STYLES */
@@ -269,7 +271,7 @@ div.loader_mini								{ background-image:url('/frontend/images/gui/ajax-loader.
 	
 	.cp_menu_designers_panel					{  }
 	
-	div.cp_listing 							{ margin:32px 0px 0px 192px; position:relative; /* min-height:672px */ }
+	div.cp_listing 							{ margin:32px 0px 0px 192px; padding-right: 32px; position:relative; display:block; /* min-height:672px */ }
 	
 	div.cp_item							{ width:184px; height:324px; margin:0 8px 12px 0; float:left; cursor:pointer; }
 	div.cp_item img							{ width:184px; height:276px; border: none 0; }

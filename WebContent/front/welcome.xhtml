@@ -9,7 +9,7 @@
   <ui:define name="content"  >
 	 <h:panelGrid columns="3" rendered="#{clientController.loggedIn}">
 	  	<h:outputText value="#{strings['Client.login']}"></h:outputText>
-	  	<h:outputText value="#{getCurrentClient.getLogin}"></h:outputText>  	
+	  	<h:outputText value="#{currentClient.login}"></h:outputText>  	
 	 </h:panelGrid>
   </ui:define>
 </ui:composition>

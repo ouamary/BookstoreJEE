@@ -4,30 +4,6 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
-	<!-- <h:graphicImage value="resources/images/logo.png" />
-
-	<h:form rendered="#{clientController.loggedIn == false}">
-		<h:commandLink rendered="#{clientController.loggedIn}" action="#{clientController.goToLogin()}"
-			value="Se connecter" />
-	</h:form>
-
-	<h:panelGroup columns="3" rendered="#{clientController.loggedIn}">
-		<h:form id="Menu">
-			<h:panelGrid columns="3">
-				<h:commandLink action="#{clientController.goToMyProfile()}"
-					value="MON COMPTE" />
-				<h:commandLink action="#{clientController.seeMyOrders()}" value="MES COMMANDES" />
-				<h:commandLink action="#{clientController.doLogout()}"
-					value="SE DÉCONNECTER" />
-			</h:panelGrid>
-		</h:form>
-	</h:panelGroup>
-
-	<h:form>
-		<h:commandLink action="#{panierController.goToPanier()}"
-			value="Mon Panier" />
-	</h:form> -->
-
 	<h:graphicImage id="logo" height="30" width="126"
 		url="http://placehold.it/126x20&amp;text=BOOKSTORE"></h:graphicImage>
 	<nav class="gender">
@@ -36,18 +12,25 @@
 	<nav class="centre">
 		<h:inputText placeholder="RECHERCHE"></h:inputText>
 		<h:commandButton action="#{clientController.doLogin}"
-				value="RECHERCHE" ajax="false" />
+			value="RECHERCHE" ajax="false" />
 	</nav>
 	<nav class="right_top"></nav>
 	<nav class="right_bottom">
+		<h:form rendered="#{clientController.loggedIn == false}">
+			<h:commandLink action="#{clientController.goToLogin()}"
+				value="SE CONNECTER" />
+		</h:form>
+
+		<h:form rendered="#{clientController.loggedIn}">
+			<h:commandLink action="#{clientController.goToMyProfile()}"
+				value="MON COMPTE" />
+			<h:commandLink action="#{clientController.seeMyOrders()}"
+				value="MES COMMANDES" />
+			<h:commandLink action="#{clientController.doLogout()}"
+				value="SE DÉCONNECTER" />
+		</h:form>
+
 		<h:form>
-			<h:commandLink rendered="#{!clientController.loggedIn}"
-				action="#{clientController.goToLogin()}" value="SE CONNECTER" />
-			<h:link value="S'INSCRIRE" outcome="inscription" />
-			<h:commandLink rendered="#{clientController.loggedIn}"
-				action="#{clientController.goToMyProfile()}" value="MON COMPTE" />
-			<h:commandLink rendered="#{clientController.loggedIn}"
-				action="#{clientController.doLogout()}" value="SE DÉCONNECTER" />
 			<h:commandLink action="#{panierController.goToPanier()}"
 				value="PANIER" />
 		</h:form>
