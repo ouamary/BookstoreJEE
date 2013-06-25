@@ -14,7 +14,7 @@
 	<ui:define name="content">
 		<h:form>
 			<ul class="clearfix">
-				<ui:repeat var="book" value="#{currentCat.books}">
+				<ui:repeat var="book" value="#{currentAuthor.books}">
 					<li class="cp_item"><p:graphicImage height="276" width="184"
 							value="#{bookBean.photo}">
 							<f:param name="bookId" value="#{book.id}" />

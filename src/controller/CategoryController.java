@@ -1,23 +1,20 @@
 package controller;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import annotation.LoggedIn;
-
-
 import ejb.CategoryService;
 import entities.Category;
-import entities.Client;
 
 
 @Named
@@ -37,7 +34,9 @@ public class CategoryController implements Serializable {
 	}
 	
 	public List<Category> getList(){
-		return categoryService.findAll();
+		List<Category> list = categoryService.findAll();
+		Collections.sort(list);
+		return list;
 	}
 	
 	public List<Category> getCategories(){

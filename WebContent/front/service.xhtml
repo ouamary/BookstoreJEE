@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="template.xhtml">
+
+	<ui:define name="top">
+		<ui:include src="top.xhtml" />
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:commandButton action="#{APIController.getBookCovers()}" value="DÉMARRER" update="display" />
+
+				<h:outputText value="#{APIController.status}" id="display" />
+			</h:panelGrid>
+
+		</h:form>
+	</ui:define>
+	<ui:define name="bottom">
+		<ui:include src="bottom.xhtml" />
+	</ui:define>
+</ui:composition>

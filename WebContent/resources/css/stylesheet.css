@@ -72,7 +72,7 @@ html, body 								{ width:100%; height:100%; min-width:984px; width:auto !impor
 
 div.header 								{ height:48px; z-index:50; position:relative; }
 
-	#logo 								{ width:126px; height:20px; position:absolute; top:29px; left:24px;}
+	#logo 								{ width:150px; height:20px; position:absolute; top:31px; left:28px;}
 #mp	#logo 								{ }
 
 	nav.gender 							{ position:absolute; top:37px; left:216px; width:184px; }
@@ -272,6 +272,7 @@ div.loader_mini								{ background-image:url('/frontend/images/gui/ajax-loader.
 	.cp_menu_designers_panel					{  }
 	
 	div.cp_listing 							{ margin:32px 0px 0px 192px; padding-right: 32px; position:relative; display:block; /* min-height:672px */ }
+	div.cp_listing_bis 						{ margin:32px 0px 0px 0px; padding-right: 32px; position:relative; display:block; /* min-height:672px */ }
 	
 	div.cp_item							{ width:184px; height:324px; margin:0 8px 12px 0; float:left; cursor:pointer; }
 	div.cp_item img							{ width:184px; height:276px; border: none 0; }

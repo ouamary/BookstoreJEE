@@ -1,26 +1,33 @@
- <ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
-  xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"  xmlns:c="http://java.sun.com/jstl/core" template="template.xhtml">
- 
-  	<ui:define name="top">
-    	<ui:include src="top.xhtml" />
-  	</ui:define>
-  	<ui:define name="left">
-    	<ui:include src="left.xhtml" />
-  	</ui:define>
-	<ui:define name="content">
-	
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="template.xhtml">
 
-		<h:form id="panier">
-			<h:panelGrid columns="2">  
-			     	<h:outputLabel value="Titre" />	   
-			     	<h:outputText value="#{currentBook.title}"/>
-			     	<h:outputLabel value="Prix" />	   
-			     	<h:outputText value="#{currentBook.price}"/>			     
-		   			<h:outputLabel value="Actions" />	   	
-			     	<h:commandLink action="#{panierController.addBook}" value="Ajouter au panier">
-						<f:param name="idAddBook" value="#{currentBook.id}" />
-					</h:commandLink>	     	
-			</h:panelGrid>
+	<ui:define name="top">
+		<ui:include src="top.xhtml" />
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h1>
+				<h:outputText value="#{currentBook.title}" />
+			</h1>
+			<p:graphicImage height="276" width="184" value="#{bookBean.photo}">
+				<f:param name="bookId" value="#{book.id}" />
+			</p:graphicImage>
+			<p>
+				<h:outputText value="#{book.price} €" />
+			</p>
+			<p>
+				<h:commandButton class="button" action="#{panierController.addBook}"
+					value="AJOUTER AU PANIER">
+					<f:param name="idAddBook" value="#{currentBook.id}" />
+				</h:commandButton>
+			</p>
 		</h:form>
+	</ui:define>
+		<ui:define name="bottom">
+		<ui:include src="bottom.xhtml" />
 	</ui:define>
 </ui:composition>

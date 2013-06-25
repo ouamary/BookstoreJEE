@@ -18,11 +18,10 @@
 		<section>
 			<section>
 				<h:form>
-					<h:commandLink action="#{categoryController.getList()}"
-						value="TOUTES LES CATÉGORIES"></h:commandLink>
+					<h:outputText styleClass="selected" value="CATÉGORIES"/>
 					<ul id="cp_menu_categories">
 						<ui:repeat var="category" value="#{categoryController.getList()}">
-							<li class="cp_menu_cat_button"><h:commandLink
+							<li class="#{category.id eq currentCat.id ? 'selected' : 'noselected'} cp_menu_cat_button"><h:commandLink
 									action="#{categoryController.displayCategory(category.id)}"
 									value="#{category.title.toUpperCase()}"></h:commandLink></li>
 						</ui:repeat>
@@ -31,19 +30,20 @@
 			</section>
 		</section>
 
-		<!-- <section>
+		<section>
 			<section>
-				<ul class="cp_menu_designers_panels">
-					<li><a
-						href="./Designer Clothing for men   Designer Shoes and Accessories   SSENSE_files/Designer Clothing for men   Designer Shoes and Accessories   SSENSE.htm"
-						class="selected">All Designers</a></li>
-
-					<li><a
-						href="http://www.ssense.com/men/designers/31_phillip_lim"
-						class="noselected">3.1 PHILLIP LIM</a></li>
-				</ul>
+				<h:form>
+					<h:outputText styleClass="selected" value="AUTEURS"/>
+					<ul id="cp_menu_designers_panels">
+						<ui:repeat var="author" value="#{authorController.getList()}">
+							<li class="#{author.id eq currentAuthor.id ? 'selected' : 'noselected'} cp_menu_cat_button"><h:commandLink
+									action="#{authorController.displayAuthor(author.id)}"
+									value="#{author.firstName.toUpperCase()} #{author.lastName.toUpperCase()}"></h:commandLink></li>
+						</ui:repeat>
+					</ul>
+				</h:form>
 			</section>
-		</section> -->
+		</section>
 	</nav>
 
 </ui:composition>

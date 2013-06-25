@@ -11,7 +11,7 @@ import java.util.*;
 
 @XmlRootElement
 
-public class Author extends Persistent {
+public class Author extends Persistent implements Comparable{
     
     private String firstName;
     private String lastName;
@@ -54,5 +54,10 @@ public class Author extends Persistent {
     public String toString(){
         return firstName + " " + lastName;
     }
+
+	@Override
+	public int compareTo(Object o) {
+		return this.getFirstName().compareTo(((Author) o).getFirstName());
+	}
     
 }

@@ -21,9 +21,8 @@ import entities.Client;
 @SessionScoped
 public class ClientController implements Serializable {
 
-	private static Logger log = LoggerFactory.getLogger(ClientController.class);
-	
-	
+	//private static Logger log = LoggerFactory.getLogger(ClientController.class);
+		
 	@EJB 
 	private ClientService clientService;
 	

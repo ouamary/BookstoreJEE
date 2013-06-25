@@ -36,6 +36,5 @@ public abstract class EntityBean {
 		this.entityId = entityId;
 		entity = service.find(entityId);
 	}
-	
-	
+		
 }

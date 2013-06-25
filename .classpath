@@ -32,5 +32,8 @@
 	<classpathentry kind="lib" path="C:/Users/Yacin/Documents/Cours/Java/Bookstore Jee/TP_JEE/WebContent/WEB-INF/lib/quartz-2.1.7.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Yacin/Documents/Cours/Java/Bookstore Jee/TP_JEE/WebContent/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Yacin/Documents/Cours/Java/Bookstore Jee/TP_JEE/WebContent/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yacin/Documents/Cours/Java/Bookstore/BookstoreJEE/woodstox-core-asl-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yacin/Documents/Cours/Java/Bookstore/BookstoreJEE/stax2-api-3.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Yacin/Documents/Cours/Java/Bookstore/BookstoreJEE/gmbal-api-only.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

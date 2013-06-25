@@ -4,9 +4,6 @@
   <ui:define name="top">
     <ui:include src="top.xhtml" />
   </ui:define>
-  <ui:define name="left">
-    <ui:include src="left.xhtml" />
-  </ui:define>
   <ui:define name="content"> 
   	<h:form rendered="#{clientController.loggedIn}"> 
 			 <p:dataTable id="listeCommandes" value="#{currentClient.commandes}" var="com" >          
@@ -36,6 +33,9 @@
 			</h:panelGrid>
 	 </h:form>  
    </ui:define>
+   	<ui:define name="bottom">
+		<ui:include src="bottom.xhtml" />
+	</ui:define>
 </ui:composition>
 
       

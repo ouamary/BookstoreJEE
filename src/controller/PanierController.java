@@ -6,19 +6,18 @@ import java.util.Map;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import javax.faces.context.FacesContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ejb.BookService;
 import ejb.OrderService;
+import entities.Book;
 import entities.Client;
 import entities.Order;
-import entities.Book;
 
 @Named
 @SessionScoped
@@ -28,8 +27,6 @@ public class PanierController implements Serializable {
 	
 	@EJB
 	private BookService bookService;
-	
-
 	
 	@EJB
 	private OrderService orderService;

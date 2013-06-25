@@ -10,8 +10,7 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -22,7 +21,7 @@ import ejb.BookService;
 import entities.Book;
 
 @Named
-@SessionScoped
+@ViewScoped
 public class BookBean extends EntityBean implements Serializable {
 	@EJB
 	private BookService bookService;
@@ -44,6 +43,10 @@ public class BookBean extends EntityBean implements Serializable {
 	
 	public StreamedContent getPhoto(){
 		String id = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("bookId");
+		/*UIComponent component = FacesContext.getCurrentInstance().getViewRoot().findComponent("bookList:bookImage");
+		Map attributes = component.getAttributes();
+		String id = (String)attributes.get("bookId");*/
+		
 		if(id!=null && id.length()>0)
 		{
 			System.out.println(id);
@@ -66,11 +69,9 @@ public class BookBean extends EntityBean implements Serializable {
 					fi.read(phot);
 					input = new ByteArrayInputStream(phot);
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			    catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

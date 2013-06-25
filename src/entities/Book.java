@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Book extends Persistent {
   private String title = "";
   private Category category;
+  private String olid;
   private java.math.BigDecimal price = new BigDecimal(0);;
   private java.util.Date date = new Date();
   private List<Author> authors;
@@ -72,7 +73,15 @@ public class Book extends Persistent {
     this.category = category;
   }
 
-  public java.math.BigDecimal getPrice() {
+  public String getOlid() {
+	return olid;
+}
+
+public void setOlid(String olid) {
+	this.olid = olid;
+}
+
+public java.math.BigDecimal getPrice() {
     return this.price;
   }
 
@@ -110,7 +119,6 @@ public class Book extends Persistent {
 
   @Lob
   @Column(length = 100000)
-  // La taille de la colonne est nécessaire pour Derby
   public byte[] getPhoto() {
     return this.photo;
   }

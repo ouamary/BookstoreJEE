@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<f:facet name="first">
+			<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>Bookstore</title>
+		</f:facet>
+
+		<link rel="icon" type=""></link>
+		<h:outputStylesheet library="css" name="stylesheet.css" />
+	</h:head>
+
+	<h:body>
+		<div class="header">
+			<ui:insert name="top" />
+		</div>
+		<div class="browsing-sale-header"></div>
+		<div class="page">
+			<div>
+				<div>
+					<div class="content">
+						<div class="cp_listing_bis">
+							<ui:insert name="content" />
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="footer_push" id="footer_push"></div>
+		</div>
+		<div class="footer">
+			<ui:insert name="bottom" />
+		</div>
+	</h:body>
+</f:view>
+</html>

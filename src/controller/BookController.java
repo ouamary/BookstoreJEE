@@ -1,18 +1,16 @@
 package controller;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.ejb.EJB;
-
 import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
-
 import javax.inject.Named;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import annotation.LoggedIn;
-
 import ejb.BookService;
 import entities.Book;
 
@@ -42,7 +40,7 @@ public class BookController implements Serializable {
 	public Book getCurrentBook() {
 		return currentBook;
 	}
-
+	
 	public String displayBook(Long id) {
 		currentBook = bookService.find(id);
 		return "book";
